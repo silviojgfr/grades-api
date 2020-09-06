@@ -25,12 +25,12 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(gradeRouter);
-app.use(
-  cors({
-    origin: 'http://localhost:8080',
-  })
-);
-
+// app.use(
+//   cors({
+//     origin: 'http://localhost:8080',
+//   })
+// );
+app.use(cors({ origin: 'https://grades-app-sr.herokuapp.com' }));
 app.get('/', (req, res) => {
   res.send('API em execucao');
 });
