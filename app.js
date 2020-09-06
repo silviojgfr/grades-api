@@ -30,8 +30,12 @@ app.use(gradeRouter);
 //     origin: 'http://localhost:8080',
 //   })
 // );
-//app.use(cors({ origin: 'https://grades-app-sr.herokuapp.com' }));
-app.use(cors());
+app.use(
+  cors({
+    origin: 'https://grades-app-sr.herokuapp.com',
+  })
+);
+//app.use(cors());
 app.get('/', (req, res) => {
   res.send('API em execucao');
 });
