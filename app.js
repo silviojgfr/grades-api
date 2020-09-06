@@ -24,7 +24,7 @@ const app = express();
 //define o dominio de origem para consumo do servico
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(gradeRouter);
+
 // app.use(
 //   cors({
 //     origin: 'http://localhost:8080',
@@ -36,6 +36,9 @@ app.use(
   })
 );
 //app.use(cors());
+
+app.use(gradeRouter);
+
 app.get('/', (req, res) => {
   res.send('API em execucao');
 });
